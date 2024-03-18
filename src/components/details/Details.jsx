@@ -1,6 +1,8 @@
 import './Details.css';
 import './bootstrap.min.css';
 import React, { useState } from 'react';
+import Header from '../Header';
+import Footer from '../Footer';
 
 function JobDetail() {
     const [name, setName] = useState('');
@@ -10,11 +12,14 @@ function JobDetail() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Logic for form submission
+    
     };
 
     return (
+        <React.Fragment>
+          
         <div className="container-xxl bg-white p-0">
+       
         {/* Spinner Start */}
         {/* <div id="spinner" className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
           <div className="spinner-border text-primary" style={{ width: '3rem', height: '3rem' }} role="status">
@@ -24,7 +29,7 @@ function JobDetail() {
         {/* Spinner End */}
   
         {/* Navbar Start */}
-        <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        {/* <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
           <a href="index.html" className="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
             <h1 className="m-0 text-primary">JobEntry</h1>
           </a>
@@ -54,10 +59,11 @@ function JobDetail() {
             </div>
             <a href="" className="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i className="fa fa-arrow-right ms-3"></i></a>
           </div>
-        </nav>
+        </nav> */}
         {/* Navbar End */}
   
         {/* Header End */}
+        <Header/>
         <div className="container-xxl py-5 bg-dark page-header mb-5">
           <div className="container my-5 pt-5 pb-4">
             <h1 className="display-3 text-white mb-3 animated slideInDown">Job Detail</h1>
@@ -158,7 +164,7 @@ function JobDetail() {
         {/* Job Detail End */}
   
         {/* Footer Start */}
-        <div className="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        {/* <div className="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
           <div className="container py-5">
             <div className="row g-5">
               <div className="col-lg-3 col-md-6">
@@ -217,12 +223,13 @@ function JobDetail() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* Footer End */}
-  
+  <Footer/>
         {/* Back to Top */}
         <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="bi bi-arrow-up"></i></a>
       </div>
+      </React.Fragment>
     );
 }
 

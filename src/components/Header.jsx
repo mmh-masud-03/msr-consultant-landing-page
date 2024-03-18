@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <header className="header" data-header>
       <div className="container">
-        <a href="#" className="logo">
+        <a href="/" className="logo">
           <img
             src="./assets/images/logo.svg"
             width="162"
@@ -34,7 +34,7 @@ const Header = () => {
 
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="#home" className="navbar-link" data-nav-link>
+              <a href="/" className="navbar-link" data-nav-link>
                 Home
               </a>
             </li>

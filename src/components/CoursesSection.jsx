@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Link from 'react-router-dom';
+import JobDetail from './details/Details';
 const CoursesSection = () => {
   return (
     <section className="section course" id="courses" aria-label="course">
@@ -8,7 +9,9 @@ const CoursesSection = () => {
         <h2 className="h2 section-title">Pick A Country To Get Started</h2>
         <ul className="grid-list">
           <li>
+            <a href="/details"> 
             <div className="course-card">
+              <a herf='JobDetail'>
               <figure className="card-banner img-holder" style={{ "--width": "370", "--height": "220" }}>
                 <img
                   src="./assets/image/image.jpeg"
@@ -45,9 +48,12 @@ const CoursesSection = () => {
                   </li>
                 </ul>
               </div>
+              </a>
             </div>
+            </a>
           </li>
           <li>
+            <a href="/details"> 
             <div className="course-card">
               <figure className="card-banner img-holder" style={{ "--width": "370", "--height": "220" }}>
                 <img
@@ -86,8 +92,10 @@ const CoursesSection = () => {
                 </ul>
               </div>
             </div>
+            </a>
           </li>
           <li>
+            <a href="/details">
             <div className="course-card">
               <figure className="card-banner img-holder" style={{ "--width": "370", "--height": "220" }}>
                 <img
@@ -126,6 +134,7 @@ const CoursesSection = () => {
                 </ul>
               </div>
             </div>
+            </a>
           </li>
         </ul>
         <a href="#" className="btn has-before">

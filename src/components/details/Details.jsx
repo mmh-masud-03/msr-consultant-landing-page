@@ -1,5 +1,5 @@
 import './Details.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import { FaDollarSign, FaMapMarkerAlt, FaClock, FaAngleRight, FaArrowUp} from 'react-icons/fa'; // Font Awesome icons
@@ -11,6 +11,38 @@ function JobDetail() {
     const [email, setEmail] = useState('');
     const [portfolio, setPortfolio] = useState('');
     const [coverLetter, setCoverLetter] = useState('');
+    const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showFixedHeader, setShowFixedHeader] = useState(false);
+
+  useEffect(() => {
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove scroll event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    // Show back to top button when user scrolls down more than 100px
+    if (window.scrollY > 100) {
+      setShowBackToTop(true);
+    } else {
+      setShowBackToTop(false);
+    }
+
+    // Show fixed header after scrolling more than 200px
+    if (window.scrollY > 200) {
+      setShowFixedHeader(true);
+    } else {
+      setShowFixedHeader(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,9 +51,9 @@ function JobDetail() {
 
     return (
       <div className='parent-container'> 
-      <div className='header-container'>
+      <div className={`header-container ${showFixedHeader ? 'fixed-header' : ''}`}>
         <Header />
-        </div>
+      </div>
           
         <div className="body-container">
        
@@ -109,7 +141,11 @@ function JobDetail() {
       
   
         {/* Back to Top */}
-        <a href="#" className="back-to-top"><FaArrowUp /></a>
+        {showBackToTop && (
+          <a href="#" className="back-to-top" onClick={scrollToTop}>
+            <FaArrowUp />
+          </a>
+        )}
       </div>
       <Footer />
       </div>

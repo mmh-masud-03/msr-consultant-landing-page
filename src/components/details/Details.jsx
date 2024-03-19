@@ -33,8 +33,8 @@ function JobDetail() {
     }
 
     // Show fixed header after scrolling more than 200px
-    if (window.scrollY > 200) {
-      setShowFixedHeader(true);
+    if (window.scrollY > 120) {
+      setTimeout(() => setShowFixedHeader(true), 500);
     } else {
       setShowFixedHeader(false);
     }
